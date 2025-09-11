@@ -137,7 +137,7 @@ export default function Page() {
     src="/ILD-2025.png"
     alt="ILD Logo"
     className="shrink-0"
-    style={{ height: 80, width: "auto", display: "block" }}
+    style={{ height: 40, width: "auto", display: "block" }}
   />
 </Link>
           <a
@@ -240,7 +240,7 @@ export default function Page() {
       <section className="mx-auto max-w-7xl px-6 py-10">
         <div className="grid md:grid-cols-12 gap-8 items-center">
           <div className="md:col-span-7">
-            <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.primary }}>Mentorship, built in</h2>
+            <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.dark }}>Mentorship, built in</h2>
             <p className="mt-2 text-slate-600">Beyond workshops, we pair practitioners with experienced mentors for guidance on projects, careers, and leadership.</p>
             <ul className="mt-4 grid sm:grid-cols-2 gap-3 text-sm text-slate-700">
               <li className="rounded-xl border p-3" style={{ borderColor: BRAND.accent }}>Breaking into Learning Design</li>
@@ -269,8 +269,8 @@ export default function Page() {
       <section className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid md:grid-cols-2 gap-8">
           <div>
-            <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.primary }}>FAQ</h2>
-            <p className="mt-2 text-slate-600">Just a few short answers while we&aposre in pre‑launch.  Have a different question? <a className="hover:text-slate-900" href="mailto:vicky@echtus.com#">Ask us!</a></p>
+            <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.dark }}>FAQ</h2>
+            <p className="mt-2 text-slate-600">Just a few short answers before we launch.  Have a different question? <a className="hover:text-slate-900" href="mailto:vicky@echtus.com#">Ask us!</a></p>
           </div>
           <div className="space-y-2">
             <FAQ q="When do workshops start?" a={"We're scheduling first cohorts now. Waitlisters will get discounted early access."}/>
