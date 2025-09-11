@@ -133,15 +133,15 @@ export default function Page() {
       <header className="w-full border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-  <Image
-    src="/ILD.png"            // or /ILD.svg
-    alt="ILD Logo"
-    width={600}               // intrinsic, not the on-screen size
-    height={200}
-    className="h-[72px] w-auto md:h-[88px] shrink-0"
-    priority
+    <Image
+        src="/ILD-2025.png"            // or /ILD.svg
+        alt="ILD Logo"
+         width={600}               // intrinsic, not the on-screen size
+        height={200}
+        className="h-[72px] w-auto md:h-[88px] shrink-0"
+         priority
   />
-</Link>
+      </Link>
           <a
             href="#waitlist"
             className="inline-flex items-center rounded-full px-4 py-2 text-white text-sm font-medium shadow-sm hover:opacity-90"
