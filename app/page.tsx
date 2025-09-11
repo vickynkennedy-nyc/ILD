@@ -134,11 +134,11 @@ export default function Page() {
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
         <Image
-           src="/ILD.svg"
+           src="/ILD.png"
            alt="ILD Logo"
            width={300}          // intrinsic; not what controls the on-screen size
            height={120}
-           className="h-12 w-auto sm:h-14 md:h-16"   // <- controls rendered size
+           className="h-25 w-auto sm:h-14 md:h-16"   // <- controls rendered size
            priority
           />
           </Link>
