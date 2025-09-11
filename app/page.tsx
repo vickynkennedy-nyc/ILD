@@ -1,6 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
+import Image from "next/image";
+type Workshop = {
+  id: string;
+  title: string;
+  desc?: string;
+};
+
+type Instructor = {
+  id: string;
+  name: string;
+  title: string;
+  headshot: string;
+  bio: string;
+  workshops: Workshop[];
+  tags: string[];
+};
 
 // =============================================
 // ILD Launch Waitlist Page — SOLID, POLISHED THEME
@@ -17,7 +34,7 @@ const BRAND = {
 export default function Page() {
   const WAITLIST_ENDPOINT = "https://formspree.io/f/xrbajpea";
 
-  const instructors = [
+  const instructors: Instructor[] = [
     {
       id: "inst1",
       name: "Ian Saville",
@@ -115,9 +132,9 @@ export default function Page() {
       {/* Header */}
       <header className="w-full border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-          <a href="/" className="flex items-center gap-2">
-            <img src="/ILD.png" alt="ILD Logo" className="h-12 w-auto" />
-          </a>
+          <Link href="/" className="flex items-center gap-2">
+        <Image src="/ILD.svg" alt="ILD Logo" width={120} height={48} priority />
+        </Link>
           <a
             href="#waitlist"
             className="inline-flex items-center rounded-full px-4 py-2 text-white text-sm font-medium shadow-sm hover:opacity-90"
@@ -203,7 +220,7 @@ export default function Page() {
         <div className="rounded-3xl bg-[#F6F7FF] p-8 border" style={{ borderColor: BRAND.accent }}>
           <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.dark }}>What happens next?</h2>
           <div className="mt-6 grid sm:grid-cols-3 gap-6">
-            {[{ step: '1', title: 'Join the waitlist', desc: 'Tell us your interests to influence the first wave of workshops.' }, { step: '2', title: 'Preview the line‑up', desc: 'We\'ll announce dates, syllabi, and pricing to waitlisters first.' }, { step: '3', title: 'Secure your seat', desc: 'Early access and mentorship pairing for the first cohorts.' }].map((s) => (
+            {[{ step: '1', title: 'Join the waitlist', desc: 'Tell us your interests to influence the first wave of workshops.' }, { step: '2', title: 'Preview the line‑up', desc: 'We will announce dates, syllabi, and pricing to waitlisters first.' }, { step: '3', title: 'Secure your seat', desc: 'Early access and mentorship pairing for the first cohorts.' }].map((s) => (
               <div key={s.step} className="rounded-2xl bg-white border p-6" style={{ borderColor: BRAND.accent }}>
                 <div className="h-8 w-8 rounded-full text-white flex items-center justify-center text-sm font-semibold" style={{ backgroundColor: BRAND.primary }}>{s.step}</div>
                 <h3 className="mt-3 font-medium">{s.title}</h3>
@@ -318,8 +335,8 @@ function WaitlistForm({ endpoint, theme = "dark" }: { endpoint: string; theme?: 
       if (!res.ok) throw new Error("Request failed");
       setOk(true);
       setState({ name: "", email: "", interest: "", role: "" });
-    } catch (err: any) {
-      setError("Something went wrong. Please try again.");
+   } catch {
+    setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -347,13 +364,19 @@ function WaitlistForm({ endpoint, theme = "dark" }: { endpoint: string; theme?: 
   );
 }
 
-function InstructorCard({ instructor }: { instructor: any }) {
+function InstructorCard({ instructor }: { instructor: Instructor }) {
   const [open, setOpen] = useState(false);
   return (
     <article className="group rounded-3xl border overflow-hidden bg-white" style={{ borderColor: '#e5e7eb' }}>
-      <div className="aspect-[4/3] overflow-hidden">
-        <img src={instructor.headshot} alt={instructor.name} className="h-full w-full object-cover" />
-      </div>
+      <div className="relative aspect-[4/3] overflow-hidden">
+  <Image
+    src={instructor.headshot}
+    alt={instructor.name}
+    fill
+    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+    className="object-cover"
+  />
+</div>
       <div className="p-5">
         <div className="flex flex-wrap gap-2">
           {instructor.tags?.map((t: string) => (
@@ -380,13 +403,12 @@ function InstructorCard({ instructor }: { instructor: any }) {
           </div>
           {open && (
             <ul id={`workshops-${instructor.id}`} className="divide-y" style={{ borderColor: '#e5e7eb' }}>
-              {instructor.workshops.map((w: any) => (
+              {instructor.workshops.map((w: Workshop) => (
                 <li key={w.id} className="px-4 py-3 text-sm">
   <div className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1 items-start">
     {/* Left: title + meta */}
     <div>
       <p className="font-medium text-slate-900">{w.title}</p>
-      <p className="text-slate-600">{w.date} • {w.length}</p>
     </div>
 
     {/* Right: button */}

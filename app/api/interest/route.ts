@@ -58,8 +58,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ ok: true });
-  } catch (err: any) {
-    console.error("API error:", err);
-    return NextResponse.json({ ok: false, error: String(err) }, { status: 500 });
-  }
+ } catch {
+  return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
+}
 }
