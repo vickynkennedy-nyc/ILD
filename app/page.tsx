@@ -133,7 +133,7 @@ export default function Page() {
       <header className="w-full border-b border-slate-200 bg-white sticky top-0 z-50">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-        <Image src="/ILD.svg" alt="ILD Logo" width={120} height={48} priority />
+        <Image src="/ILD.png" alt="ILD Logo" width={120} height={48} priority />
         </Link>
           <a
             href="#waitlist"
