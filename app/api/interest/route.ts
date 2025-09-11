@@ -1,4 +1,3 @@
-// src/app/api/interest/route.ts
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -16,10 +15,8 @@ export async function POST(req: Request) {
     const ts = new Date().toISOString();
     const ip = req.headers.get("x-forwarded-for") || "local";
 
-    // Always log to your server console (shows in `npm run dev` output)
     console.log("INTEREST", { instructor, workshop, type, page, ua, ts, ip });
 
-    // Optional: send to Slack if SLACK_WEBHOOK_URL is set
     const slackUrl = process.env.SLACK_WEBHOOK_URL;
     if (slackUrl) {
       const payload = {
@@ -46,7 +43,6 @@ export async function POST(req: Request) {
         body: JSON.stringify(payload),
       });
 
-      // Slack usually responds with plain text "ok"
       const text = await resp.text();
       if (!resp.ok || text !== "ok") {
         console.error("Slack webhook failed:", resp.status, text);
@@ -58,7 +54,7 @@ export async function POST(req: Request) {
     }
 
     return NextResponse.json({ ok: true });
- } catch {
-  return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
-}
+  } catch {
+    return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
+  }
 }
