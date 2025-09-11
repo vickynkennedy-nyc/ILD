@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1389 340">
+  <!-- Generator: Adobe Illustrator 29.6.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 9)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #4b70f5;
+      }
+
+      .st1, .st2, .st3 {
+        isolation: isolate;
+      }
+
+      .st4, .st2, .st3 {
+        fill: #4c3bcf;
+      }
+
+      .st2, .st3 {
+        font-family: AreaNormal-Extralight, 'Area Normal';
+        font-size: 134.74px;
+        font-weight: 200;
+      }
+
+      .st3 {
+        letter-spacing: -.01em;
+      }
+
+      .st5 {
+        fill: #3dc2ec;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="st5" d="M73.46,256.78h-32.42V29.86h32.42v226.92Z"/>
+    <path class="st0" d="M276.44,256.78H84.16V29.86h32.42v197.75h159.87v29.17h-.01Z"/>
+    <path class="st4" d="M130.76,216.45V29.86h64.55c16.7,0,31.37,3.73,44.03,11.2,12.65,7.46,22.47,18.22,29.44,32.25,6.97,14.04,10.46,30.65,10.46,49.85s-3.49,35.81-10.46,49.85-16.78,24.79-29.44,32.25c-12.65,7.46-27.33,11.2-44.03,11.2h-64.55ZM192.73,192.46c19.45,0,34.43-5.91,44.93-17.73s15.75-29.01,15.75-51.58-5.25-39.76-15.75-51.58-25.48-17.73-44.93-17.73h-36.15v138.61h36.15,0Z"/>
+  </g>
+  <g class="st1">
+    <text class="st2" transform="translate(298.24 143.32)"><tspan x="0" y="0">Institute of</tspan></text>
+    <text class="st3" transform="translate(298.24 262.03)"><tspan x="0" y="0">Learning Design</tspan></text>
+  </g>
+</svg>
