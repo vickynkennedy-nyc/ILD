@@ -40,12 +40,12 @@ export default function Page() {
       name: "Ian Saville",
       title: "Managing Partner, Collabic",
       headshot: "/instructors/ian.png",
-      bio: {"Ian Saville is a leadership development and learning strategist with 15+ years of experience building scalable programs and coaching senior leaders. Currently the co-founder of Collabic and previously a leadership development leader at Meta, he's known for driving global initiatives that strengthen teams and amplify impact."},
+      bio: "Ian Saville is a leadership development and learning strategist with 15+ years of experience building scalable programs and coaching senior leaders. Currently the co-founder of Collabic and previously a leadership development leader at Meta, he's known for driving global initiatives that strengthen teams and amplify impact.",
       workshops: [
         {
           id: "w1",
           title: "Year One: Build Your Practice with Purpose",
-          desc: {"A workshop designed for aspiring solopreneurs ready to step into entrepreneurship with clarity and confidence. Whether you're breaking away from corporate life, launching a coaching or consulting practice, or just beginning to imagine your business taking shape, this 3-hour intensive is built to meet you where you are. You'll move from fuzzy ideas to concrete offerings, establish a sustainable rhythm for running your business, and confront the practical (and emotional) realities of year one. If you're asking yourself, How do I actually do this?, you’re not alone, and this class is for you. Together we’ll explore your motivations, define your product, identify your audience, and map your next moves with rigor and heart."}
+          desc: "A workshop designed for aspiring solopreneurs ready to step into entrepreneurship with clarity and confidence. Whether you're breaking away from corporate life, launching a coaching or consulting practice, or just beginning to imagine your business taking shape, this 3-hour intensive is built to meet you where you are. You'll move from fuzzy ideas to concrete offerings, establish a sustainable rhythm for running your business, and confront the practical (and emotional) realities of year one. If you're asking yourself, How do I actually do this?, you’re not alone, and this class is for you. Together we’ll explore your motivations, define your product, identify your audience, and map your next moves with rigor and heart."
         },
       ],
       tags: ["Coaching", "Leadership"],
@@ -70,12 +70,12 @@ export default function Page() {
       name: "Christine Bower",
       title: "Sr Specialist, Marketing Enablement, InvestCloud",
       headshot: "/instructors/christine.png",
-      bio: {"Christine Bower brings over a decade of experience designing impactful learning programs for industry leaders including Facebook, LinkedIn, and TikTok. She served as Lead Instructional Designer for Google's Project Management certificate on Coursera and has orchestrated complex learning initiatives from AI adoption programs to partner certification systems."},
+      bio: "Christine Bower brings over a decade of experience designing impactful learning programs for industry leaders including Facebook, LinkedIn, and TikTok. She served as Lead Instructional Designer for Google's Project Management certificate on Coursera and has orchestrated complex learning initiatives from AI adoption programs to partner certification systems.",
       workshops: [
          {
           id: "w1",
           title: "From Chaos to Clarity: Project Management Skills for Learning Leaders",
-          desc: {"Tired of missed deadlines, scope creep, and stakeholders who think everything is urgent? This hands-on workshop gives L&D professionals the practical frameworks to transform chaotic project requests into structured, successful learning initiatives. You'll walk away with project planning templates and boundary-setting techniques that actually work. No more being the reactive order-taker—time to become the proactive strategic partner your organization needs."}
+          desc: "Tired of missed deadlines, scope creep, and stakeholders who think everything is urgent? This hands-on workshop gives L&D professionals the practical frameworks to transform chaotic project requests into structured, successful learning initiatives. You'll walk away with project planning templates and boundary-setting techniques that actually work. No more being the reactive order-taker—time to become the proactive strategic partner your organization needs."
         },
       ],
       tags: ["Project Management", "L&D"],
@@ -180,10 +180,10 @@ export default function Page() {
           </div>
           <ul className="md:col-span-7 grid sm:grid-cols-2 gap-6">
             {[
-              { title: 'Expert-Led Workshops', desc: {'Learn from those who’ve led learning initiatives at companies like Amazon, TikTok, Intuit, and Walt Disney Co.'} },
-              { title: 'Live and Hybrid Experiences', desc: 'On demand courses are convenient, but nothing beats face time with real people.' },
-              { title: 'Relevant and Timely', desc: 'Keep your skills up to date with the latest approaches to learning design that are actually used in the workplace.' },
-              { title: 'Affordable and Flexible', desc: 'Take advantage of affordable workshops, with membership discounts coming soon.' },
+              { title: 'Expert-Led Workshops', desc: "Learn from those who’ve led learning initiatives at companies like Amazon, TikTok, Intuit, and Walt Disney Co." },
+              { title: 'Live and Hybrid Experiences', desc: "On demand courses are convenient, but nothing beats face time with real people." },
+              { title: 'Relevant and Timely', desc: "Keep your skills up to date with the latest approaches to learning design that are actually used in the workplace." },
+              { title: 'Affordable and Flexible', desc: "Take advantage of affordable workshops, with membership discounts coming soon." },
             ].map((f) => (
               <li key={f.title} className="rounded-2xl border p-5" style={{ borderColor: BRAND.primary }}>
                 <h3 className="font-medium" style={{ color: BRAND.dark }}>{f.title}</h3>
@@ -265,7 +265,7 @@ export default function Page() {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl sm:text-3xl font-semibold" style={{ color: BRAND.primary }}>FAQ</h2>
-            <p className="mt-2 text-slate-600">Just a few short answers while we're in pre‑launch.  Have a different question? <a className="hover:text-slate-900" href="mailto:vicky@echtus.com#">Ask us!</a></p>
+            <p className="mt-2 text-slate-600">Just a few short answers while we&aposre in pre‑launch.  Have a different question? <a className="hover:text-slate-900" href="mailto:vicky@echtus.com#">Ask us!</a></p>
           </div>
           <div className="space-y-2">
             <FAQ q="When do workshops start?" a={"We're scheduling first cohorts now. Waitlisters will get discounted early access."}/>
