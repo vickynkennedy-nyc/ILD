@@ -7,6 +7,8 @@ type Workshop = {
   id: string;
   title: string;
   desc?: string;
+  date?: string;    // add this (optional)
+  length?: string;  // add this (optional)
 };
 
 type Instructor = {
@@ -427,9 +429,11 @@ function InstructorCard({ instructor }: { instructor: Instructor }) {
           {/* Details for the first workshop */}
           {first && open && (
             <div id={`workshop-${instructor.id}`} className="px-4 pb-4 text-sm">
+              {(first.date || first.length) && (
               <p className="text-slate-600">
-                {first.date} · {first.length}
+              {[first.date, first.length].filter(Boolean).join(" · ")}
               </p>
+                  )}
               <p className="mt-2 text-slate-700">
                 {first.desc ?? "Details coming soon."}
               </p>
