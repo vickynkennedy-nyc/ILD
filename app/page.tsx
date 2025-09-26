@@ -44,7 +44,7 @@ export default function Page() {
       workshops: [
         {
           id: "w1",
-          title: "Year One: Build Your Practice with Purpose",
+          title: "UPCOMING WORKSHOP: Build Your Practice with Purpose",
           desc: "A workshop designed for aspiring solopreneurs ready to step into entrepreneurship with clarity and confidence. Whether you're breaking away from corporate life, launching a coaching or consulting practice, or just beginning to imagine your business taking shape, this 3-hour intensive is built to meet you where you are. You'll move from fuzzy ideas to concrete offerings, establish a sustainable rhythm for running your business, and confront the practical (and emotional) realities of year one. If you're asking yourself, How do I actually do this?, you’re not alone, and this class is for you. Together we’ll explore your motivations, define your product, identify your audience, and map your next moves with rigor and heart."
         },
       ],
@@ -59,7 +59,7 @@ export default function Page() {
       workshops: [
          {
           id: "w1",
-          title: "The Collaborative Edge: Unlocking Performance Through Social Learning Ecosystems",
+          title: "UPCOMING WORKSHOP: Unlocking Performance Through Social Learning Ecosystems",
           desc: "What if your team could learn faster, remember more, and deliver bigger results—together? The Collaborative Edge reveals how to replace passive training with dynamic social learning that sticks. Through proven strategies and real results—like the 22% boost in closed-won deals —you’ll discover how to create peer-driven ecosystems that accelerate skills, fuel engagement, and drive measurable business impact."
         },
       ],
@@ -74,8 +74,8 @@ export default function Page() {
       workshops: [
          {
           id: "w1",
-          title: "From Chaos to Clarity: Project Management Skills for Learning Leaders",
-          desc: "Tired of missed deadlines, scope creep, and stakeholders who think everything is urgent? This hands-on workshop gives L&D professionals the practical frameworks to transform chaotic project requests into structured, successful learning initiatives. You'll walk away with project planning templates and boundary-setting techniques that actually work. No more being the reactive order-taker—time to become the proactive strategic partner your organization needs."
+          title: "UPCOMING WORKSHOP: Project Management Skills for Learning Leaders",
+          desc: "Tired of missed deadlines, scope creep, and stakeholders who think everything is urgent? This hands-on workshop gives L&D professionals the practical frameworks to transform chaotic project requests into structured, successful learning initiatives. You'll walk away with project planning templates and boundary-setting techniques that actually work."
         },
       ],
       tags: ["Project Management", "L&D"],
@@ -89,7 +89,7 @@ export default function Page() {
       workshops: [
         {
           id: "w1",
-          title: "From Order-Taker to Strategic Partner: Diagnosing Needs and Influencing Requestors",
+          title: "UPCOMING WORKSHOP: Diagnosing Needs and Influencing Requestors",
           desc: "Have you been asked for a training solution without opportunity to understand the need? An important step in designing a training solution starts with being a consultant and understanding the context of what is being solved for and how it will be seen as successful. Let’s spend time reviewing how to understand the need, define success, and the conversations to get you and the requestor aligned."
         },
       ],
@@ -104,8 +104,8 @@ export default function Page() {
   workshops: [
      {
           id: "w1",
-          title: "Building for Business Impact ",
-          desc: "Description to come."
+          title: "UPCOMING WORKSHOP: Building for Business Impact",
+          desc: "Learn to design external-facing programs like customer education, partner ebnablement, and product certifications that are aligned to strategic business goals."
         },
   ],
   tags: ["Instructional Design", "Customer Education"],
@@ -371,66 +371,78 @@ function WaitlistForm({ endpoint, theme = "dark" }: { endpoint: string; theme?: 
 
 function InstructorCard({ instructor }: { instructor: Instructor }) {
   const [open, setOpen] = useState(false);
+  const first = instructor.workshops?.[0];
+
   return (
     <article className="group rounded-3xl border overflow-hidden bg-white" style={{ borderColor: '#e5e7eb' }}>
-      <div className="relative aspect-[4/3] overflow-hidden">
-  <Image
-    src={instructor.headshot}
-    alt={instructor.name}
-    fill
-    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-    className="object-cover"
-  />
-</div>
+      <div className="overflow-hidden bg-slate-100">
+        <Image
+          src={instructor.headshot}
+          alt={instructor.name}
+          width={600}
+          height={800}
+          className="h-72 w-auto mx-auto object-contain"
+        />
+      </div>
+
       <div className="p-5">
         <div className="flex flex-wrap gap-2">
           {instructor.tags?.map((t: string) => (
-            <span key={t} className="inline-flex items-center rounded-full px-2.5 py-1 text-xs" style={{ backgroundColor: '#f1f5f9', color: '#334155' }}>{t}</span>
+            <span
+              key={t}
+              className="inline-flex items-center rounded-full px-2.5 py-1 text-xs"
+              style={{ backgroundColor: '#f1f5f9', color: '#334155' }}
+            >
+              {t}
+            </span>
           ))}
         </div>
+
         <h3 className="mt-3 text-lg font-semibold text-slate-900">{instructor.name}</h3>
         <p className="text-sm text-slate-600">{instructor.title}</p>
         <p className="mt-2 text-sm text-slate-700">{instructor.bio}</p>
 
         <div className="mt-4 rounded-2xl border" style={{ borderColor: '#e5e7eb' }}>
-          <div className="flex items-center justify-between px-4 py-3">
-            <h4 className="font-medium">Upcoming workshop</h4>
-            <button
-  type="button"
-  onClick={() => setOpen((v) => !v)}
-  className="text-sm font-medium cursor-pointer underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3dc2ec] transition"
-  style={{ color: BRAND.primary }}
-  aria-expanded={open}
-  aria-controls={`workshops-${instructor.id}`}
->
-  {open ? "Hide" : "View"}
-</button>
+          <div className="px-4 py-3">
+            {/* Title */}
+            <h4 className="font-medium text-slate-900">
+              {first ? first.title : "Workshop coming soon"}
+            </h4>
+
+            {/* View/Hide under the title */}
+            {first && (
+              <button
+                type="button"
+                onClick={() => setOpen(v => !v)}
+                className="mt-2 text-sm font-medium cursor-pointer underline-offset-4 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#3dc2ec] transition"
+                style={{ color: BRAND.primary }}
+                aria-expanded={open}
+                aria-controls={`workshop-${instructor.id}`}
+              >
+                {open ? "Hide Description" : "View Description"}
+              </button>
+            )}
           </div>
-          {open && (
-            <ul id={`workshops-${instructor.id}`} className="divide-y" style={{ borderColor: '#e5e7eb' }}>
-              {instructor.workshops.map((w: Workshop) => (
-                <li key={w.id} className="px-4 py-3 text-sm">
-  <div className="grid grid-cols-[1fr_auto] gap-x-3 gap-y-1 items-start">
-    {/* Left: title + meta */}
-    <div>
-      <p className="font-medium text-slate-900">{w.title}</p>
-    </div>
 
-    {/* Right: button */}
-    <div>
-      <ExpressInterest instructor={instructor.name} workshop={w.title} />
-    </div>
+          {/* Details for the first workshop */}
+          {first && open && (
+            <div id={`workshop-${instructor.id}`} className="px-4 pb-4 text-sm">
+              <p className="text-slate-600">
+                {first.date} · {first.length}
+              </p>
+              <p className="mt-2 text-slate-700">
+                {first.desc ?? "Details coming soon."}
+              </p>
+              <div className="mt-3">
+                <ExpressInterest instructor={instructor.name} workshop={first.title} />
+              </div>
+            </div>
+          )}
 
-    {/* Full-width: description wraps under both */}
-    {w.desc && (
-      <p className="col-span-2 mt-1 text-slate-700 break-words">
-        {w.desc}
-      </p>
-    )}
-  </div>
-</li>
-              ))}
-            </ul>
+          {!first && (
+            <div className="px-4 py-3 text-sm text-slate-500">
+              Check back soon for this instructor’s upcoming workshop.
+            </div>
           )}
         </div>
       </div>
