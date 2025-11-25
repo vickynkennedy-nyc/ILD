@@ -53,21 +53,6 @@ export default function Page() {
       tags: ["Coaching", "Leadership"],
     },
     {
-      id: "inst2",
-      name: "Natalie Anders",
-      title: "Head of Global Sales Onboarding, Intuit",
-      headshot: "/instructors/natalie.png",
-      bio: "Natalie Anders is a global sales enablement and learning development leader with over 10 years of experience designing programs that scale impact across organizations. Currently Head of Global Sales Onboarding at Intuit and formerly a senior leader at Amazon Web Services, she has consistently delivered measurable results.",
-      workshops: [
-         {
-          id: "w1",
-          title: "UPCOMING WORKSHOP: Unlocking Performance Through Social Learning Ecosystems",
-          desc: "What if your team could learn faster, remember more, and deliver bigger results—together? The Collaborative Edge reveals how to replace passive training with dynamic social learning that sticks. Through proven strategies and real results—like the 22% boost in closed-won deals —you’ll discover how to create peer-driven ecosystems that accelerate skills, fuel engagement, and drive measurable business impact."
-        },
-      ],
-      tags: ["Enablement", "Social Learning"],
-    },
-    {
       id: "inst3",
       name: "Christine Bower",
       title: "Sr Specialist, Marketing Enablement, InvestCloud",
